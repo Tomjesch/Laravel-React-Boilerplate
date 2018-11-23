@@ -6,10 +6,17 @@ import HomePage from './pages/HomePage';
 import PageOne from './pages/PageOne';
 import PageTwo from './pages/PageTwo';
 import PageThree from './pages/PageThree';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Account from './pages/Account';
 
 export default class App extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            isLoggedIn: false,
+            user: {}
+        };
     }
     
     render() {
@@ -17,11 +24,14 @@ export default class App extends Component {
             <BrowserRouter>
                 <div>
                     <Header />
-                    <div class="container">
+                    <div className="container">
                         <Route exact path="/" component={HomePage} />
                         <Route path="/page-1" component={PageOne} />
                         <Route path="/page-2" component={PageTwo} />
                         <Route path="/page-3" component={PageThree} />
+                        <Route path="/account" component={Account} />
+                        <Route path="/login" component={Login} />
+                        <Route path="/register" component={Register} />
                     </div>
                 </div>
             </BrowserRouter>

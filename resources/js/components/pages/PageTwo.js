@@ -7,7 +7,10 @@ export default class PageThree extends Component {
 
     render() {
         return (
-            <h1>Page Two</h1>
+            <div>
+                <h1>Page Two</h1>
+                <p> This is page 2 {localStorage.getItem('user_name')} </p>
+            </div>
         );
     }
 }
